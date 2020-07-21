@@ -1,0 +1,937 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="yandex-verification" content="796a0f9369f3d9e9"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description"
+          content="Официальный партнер Яндекс.Такси компания АВТОПАРК, центр подключения и обучения водителей в Кемерове">
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
+          integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <link rel="icon" href="/LogoAv.ico" type="image/x-icon">
+    <title>Автопарк</title>
+    <!-- Global site tag (gtag.js) - Google Ads: 832323453 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-832323453"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'AW-832323453');
+    </script>
+
+</head>
+
+<body id="page-top">
+<style>
+    .gor :hover {
+        color: white;
+    }
+
+    .loader {
+        width: 150px;
+        height: 150px;
+        margin: 40px auto;
+        transform: rotate(-45deg);
+        font-size: 0;
+        line-height: 0;
+        animation: rotate-loader 5s infinite;
+        padding: 25px;
+        border: 1px solid #0096a3;
+    }
+
+    .loader .loader-inner {
+        position: relative;
+        display: inline-block;
+        width: 50%;
+        height: 50%;
+    }
+
+    .loader .loading {
+        position: absolute;
+        background: #0096a3;
+    }
+
+    .loader .one {
+        width: 100%;
+        bottom: 0;
+        height: 0;
+        animation: loading-one 1s infinite;
+    }
+
+    .loader .two {
+        width: 0;
+        height: 100%;
+        left: 0;
+        animation: loading-two 1s infinite;
+        animation-delay: 0.25s;
+    }
+
+    .loader .three {
+        width: 0;
+        height: 100%;
+        right: 0;
+        animation: loading-two 1s infinite;
+        animation-delay: 0.75s;
+    }
+
+    .loader .four {
+        width: 100%;
+        top: 0;
+        height: 0;
+        animation: loading-one 1s infinite;
+        animation-delay: 0.5s;
+    }
+
+    @keyframes loading-one {
+        0% {
+            height: 0;
+            opacity: 1;
+        }
+        12.5% {
+            height: 100%;
+            opacity: 1;
+        }
+        50% {
+            opacity: 1;
+        }
+        100% {
+            height: 100%;
+            opacity: 0;
+        }
+    }
+
+    @keyframes loading-two {
+        0% {
+            width: 0;
+            opacity: 1;
+        }
+        12.5% {
+            width: 100%;
+            opacity: 1;
+        }
+        50% {
+            opacity: 1;
+        }
+        100% {
+            width: 100%;
+            opacity: 0;
+        }
+    }
+
+    @keyframes rotate-loader {
+        0% {
+            transform: rotate(-45deg);
+        }
+        20% {
+            transform: rotate(-45deg);
+        }
+        25% {
+            transform: rotate(-135deg);
+        }
+        45% {
+            transform: rotate(-135deg);
+        }
+        50% {
+            transform: rotate(-225deg);
+        }
+        70% {
+            transform: rotate(-225deg);
+        }
+        75% {
+            transform: rotate(-315deg);
+        }
+        95% {
+            transform: rotate(-315deg);
+        }
+        100% {
+            transform: rotate(-405deg);
+        }
+    }
+</style>
+
+<!--  <div id="load" class="container h-100">
+    <div class="row h-100" style="padding-top: 50%;padding-bottom: 50%;" >
+        <div style="height:1500px" class="col-md-12 h-100">
+            <div id="lader" class="loader">
+                <div class="loader-inner">
+                    <div class="loading one"></div>
+                </div>
+                <div class="loader-inner">
+                    <div class="loading two"></div>
+                </div>
+                <div class="loader-inner">
+                    <div class="loading three"></div>
+                </div>
+                <div class="loader-inner">
+                    <div class="loading four"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>-->
+
+<!--Шапка и футер-->
+
+
+<header style="padding-top: 0px;" class="hcol header container-fluid">
+    <div class="tcw row align-items-center ml-2 mt-auto">
+        <p>Ваш город: </p>
+        <a class="gor ml-2 text-warning" id="dropdownMenuButton" data-toggle="dropdown"
+           aria-haspopup="true" aria-expanded="false" OnClick="togpop();">
+            <strong>Кемерово</strong>
+        </a>
+        <a class="dropdown" id="pop1" data-toggle="popover" data-placement="bottom" title="Выбор города"
+           data-content="Нажмите что-бы выбрать город">
+        </a>
+
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="https://xn--42-6kcaj3c0aikq.xn--p1ai/">Кемерово</a>
+            <a class="dropdown-item" href="https://xn--42-6kcaj3c0aikq.xn--p1ai/nkz.html">Новокузнецк</a>
+        </div>
+    </div>
+    <div class="row align-items-center">
+        <div class="col-md-4 align-self-center">
+            <h1 align="center" class="tcw logosizetext">А<small><strong><small><strong>ВТОПАРК</strong></small></strong></small>
+            </h1>
+        </div>
+        <div class="col-md-5 text-md-right text-center">
+            <p class="tcw htps">8-(3842)65-01-99</p>
+            <!--        <p class="tcw htps">8-(3842)-761-222</p>-->
+            <p class="tcw"><strong>Демьяна Бедного, 6. Офис, 38 </strong></p>
+        </div>
+        <div class="py-2 text-md-left text-center col-md-3">
+            <button data-toggle="modal" data-target="#modal_call_new" type="button" class="btn btn-warning">ЗАКАЗАТЬ
+                ЗВОНОК
+            </button>
+        </div>
+    </div>
+</header>
+<!--Меню-->
+
+<nav id="menu" class="navbar navbar-expand-lg navbar-dark container-fluid">
+    <div class="container-fluid justify-content-center">
+        <button class="navbar-toggler navbar-toggler-right collapsed hcol btn-primary" type="button"
+                data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <div><i class="fa fa-bars pr-2"></i>Меню</div>
+        </button>
+        <div align="center" class="collapse navbar-collapse justify-content-center" id="navbarResponsive">
+            <ul id="menu" class="navbar-nav justify-content-center">
+                <!--          <li class="nav-item"> <a class="nav-link" href="#news"><strong> НОВОСТИ</strong></a> </li>-->
+                <li class="nav-item"><a class="nav-link" href="#autovik"><strong>АРЕНДА АВТО ПОД ВЫКУП</strong></a></li>
+                <li class="nav-item"><a class="nav-link"><strong>•</strong></a></li>
+                <li class="nav-item"><a class="nav-link" href="#autovikat"><strong>АВТО ПОД ВЫКАТ</strong></a></li>
+                <li class="nav-item"><a class="nav-link"><strong>•</strong></a></li>
+                <!--                <li class="nav-item"><a class="nav-link" href="#auto"><strong>НАШИ АВТОМОБИЛИ</strong></a></li>-->
+                <li class="nav-item"><a class="nav-link" href="#arta"><strong>АРЕНДА ПОД ТАКСИ</strong></a></li>
+                <li class="nav-item"><a class="nav-link"><strong>•</strong></a></li>
+                <li class="nav-item"><a class="nav-link" href="#connectya"><strong>ПОДКЛЮЧЕНИЕ К ЯНДЕКС
+                    ТАКСИ</strong></a></li>
+                <li class="nav-item"><a class="nav-link"><strong>•</strong></a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact"><strong>КОНТАКТЫ</strong></a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!--Шапка-->
+
+<section class="hcol container-fluid">
+    <div class="container otsb">
+        <div class="row justify-content-center no-gutters">
+            <div class="col-12">
+                <div class="polosa pushforpolosa"></div>
+            </div>
+        </div>
+        <!--        <h1 align="center" class="tcw hts">Снижение цен на аренду автомобилей под выкат и выкуп!</h1>-->
+        <h1 align="center" class="tcw hts">Автомобили под выкат и выкуп!</h1>
+        <h1 align="center"><strong class="tcw">С выгодой 40%!</strong></h1>
+        <!--        <h1 align="center" class="tcw hts">Прямо сейчас мы готовы предложить Вам следующие автомобили по  низким ценам</h1>-->
+        <div class="row justify-content-center no-gutters">
+            <div class="col-6">
+                <div class="polosa pushforpolosa"></div>
+            </div>
+        </div>
+        <h2 align="center" class="tcw htw">Позвоните нам</h2>
+        <h2 align="center" class="tcw htw">8-(3842)65-01-99</h2>
+        <h2 align="center" class="tcw htw otsb">Или оставьте заявку и мы вам перезвоним</h2>
+        <div class="row text-center">
+            <div class="col">
+                <button type="button" class="btn btn-warning btn-lg" data-toggle="modal" data-target="#modal_call_new">
+                    ЗАКАЗАТЬ ЗВОНОК
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Новости-->
+
+<!--<section class="container-fluid py-4">
+  <h2 id="news" align="center">НОВОСТИ </h2>
+  <p align="center">Свежие новости АВТОПАРКА </p>
+  <div> 
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators otsum">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+      </ol>
+      <div class="carousel-inner"> 
+        <div class="carousel-item">
+          <div class="row justify-content-center otsb otsu">
+            <div class="col-1">
+              <div class="polosa2"></div>
+            </div>
+            <div class="col-8">
+              <h3 align="left">АКЦИЯ!!!</h3>
+              <p align="left" class="htps">Внимание акция! Приведи друга на аренду и получи 1000 рублей!<br>
+              </p>
+              <p align="left"><em><small>Подробности акции по тел. или в офисе компании</small></em></p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item active">
+          <div class="row justify-content-center otsb otsu text-center align-items-center">
+            <div class="col-9 slid2">
+              <h3 align="center" class="ots">Обучающий центр</h3>
+              <i class="fa fa-book fa-5x py-2"></i>
+              <p style="font-size: 14pt" align="center" class="py-2">Спешим поделиться радостной новостью. Компания &quot;Автопарк&quot; единственный партнер <span class="colorred">Я</span>ндекс.Такси. в городе кемерово, получила статус «Обучающего центра водителей». У Нас Вы всегда можете получить консультацию по интересующим вопросам. Мы научим Вас правилам работы и стандартам сервиса. Приходите, и мы научим Вас, как заработать с <span class="colorred">Я</span>ндекс.Такси!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev"> <span aria-hidden="true"> <i class="fas fa-angle-left fa-3x"></i></span> <span class="sr-only">Previous</span></a> <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next"> <span aria-hidden="true"><i class="fas fa-angle-right fa-3x"></i></span> <span class="sr-only">Next</span></a></div>
+  </div>
+</section>-->
+
+<!--Автомобили-->
+
+<section class="container" id="autovik">
+    <h2 align="center" class="py-4">АРЕНДА АВТОМОБИЛЯ С ПРАВОМ ВЫКУПА</h2>
+    <h4 align="center">Работай на себя. Получи машину!</h4>
+    <!--    <div class="row justify-content-center no-gutters">-->
+    <!--        <div class="col-md-4 obvodvik m-2">-->
+    <!--            <div class="row align-items-center align-self-center h-100">-->
+    <!--                <div class="col">-->
+    <!--                    <p align="center"><strong>Период выкупа составляет от одного года. При этом нет необходимости-->
+    <!--                        связываться с оформлением кредита, собирать справки, привлекать поручителей и ждать одобрения-->
+    <!--                        банка </strong></p>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--        &lt;!&ndash;        <div class="col-4 obvodvik m-2">&ndash;&gt;-->
+    <!--        &lt;!&ndash;            <div class="row align-items-center align-self-center h-100">&ndash;&gt;-->
+    <!--        &lt;!&ndash;                <div class="col">&ndash;&gt;-->
+    <!--        &lt;!&ndash;                    <p align="center"><strong>Авто аренда с выкупом в компании АВТОПАРК позволяет выбрать любой&ndash;&gt;-->
+    <!--        &lt;!&ndash;                        автомобиль, который вам понравиться, или же сразу несколько транспортных средств </strong></p>&ndash;&gt;-->
+    <!--        &lt;!&ndash;                </div>&ndash;&gt;-->
+    <!--        &lt;!&ndash;            </div>&ndash;&gt;-->
+    <!--        &lt;!&ndash;        </div>&ndash;&gt;-->
+    <!--        <div class="col-md-4 obvodvik m-2">-->
+    <!--            <div class="row align-items-center align-self-center h-100">-->
+    <!--                <div class="col">-->
+    <!--                    <p align="center"><strong>Автомобиль Вы получаете сразу, а стоимость выплачиваете-->
+    <!--                        постепенно </strong></p>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--    </div>-->
+    <div class="row py-4 justify-content-center">
+        <div class="col-12 col-md-6">
+            <img src="img/ik/1.jpg" alt="" width="100%" class="img-fluid">
+        </div>
+        <div class="col-12 col-md-6">
+            <img src="img/ik/2.jpg" alt="" width="100%" class="img-fluid">
+        </div>
+        <!--        <div class="col">-->
+        <!--            <img src="img/ik/2.jpg" alt="" width="500" height="233" class="img-fluid">-->
+        <!--            <p align="center" class="py-2"><strong>Условия для новых автомобилей не из нашего автопарка </strong></p>-->
+        <!--            <ul>-->
+        <!--                <li>Первоначальный взнос 25% от стоимости автомобиля</li>-->
+        <!--                <li>Срок аренды с правом выкупа от 1 года.</li>-->
+        <!--                <li>Своевременное обслуживание автомобиля за счет арендатора</li>-->
+        <!--            </ul>-->
+        <!--        </div>-->
+    </div>
+    <!--    <div class="row justify-content-center">-->
+    <!--        <div class="col">-->
+    <h3 align="center" class="py-2"><strong>Условия для автомобилей с нашего автопарка </strong></h3>
+    <ul align="center">
+        <li style="list-style-type: none;">• Первоначальный взнос (залог) от 2000 руб.</li>
+        <li style="list-style-type: none;">• Срок аренды с правом выкупа от 1-го года.</li>
+        <li style="list-style-type: none;">• Своевременное обслуживание автомобиля за счет арендатора</li>
+    </ul>
+    <h3 class="text-center pb-3">Перечень автомобилей под выкуп :</h3>
+    <table class="text-center table table-hover table-bordered">
+        <thead>
+        <tr>
+            <th class="text-left" scope="col">Модель</th>
+            <th class="text-left" scope="col">Год выпуска</th>
+            <th class="text-left" scope="col">Срок выкупа</th>
+            <th class="text-left" scope="col">Аренда/сутки</th>
+        </tr>
+        </thead>
+        <tbody>
+<!--        <tr>-->
+<!--            <td class="text-left">KIA RIO</td>-->
+<!--            <td class="text-left">2017</td>-->
+<!--            <td class="text-left">1 год 6 мес.</td>-->
+<!--            <td class="text-left">1600 руб.</td>-->
+<!--        </tr>-->
+        <tr>
+            <td class="text-left">RENAULT LOGAN</td>
+            <td class="text-left">2017</td>
+            <td class="text-left">1 год 6 мес.</td>
+            <td class="text-left">1400 руб.</td>
+        </tr>
+        <tr>
+            <td class="text-left">LADA GRANTA</td>
+            <td class="text-left">2017</td>
+            <td class="text-left">1 год 4 мес.</td>
+            <td class="text-left">1100 руб.</td>
+        </tr>
+        <tr>
+            <td class="text-left">LADA GRANTA</td>
+            <td class="text-left">2015</td>
+            <td class="text-left">1 год</td>
+            <td class="text-left">1000 руб.</td>
+        </tr>
+        </tbody>
+    </table>
+    <!--        </div>-->
+    <!--    </div>-->
+</section>
+<section class="container" id="autovikat">
+    <h2 align="center" class="py-4">АВТОМОБИЛИ ПОД ВЫКАТ</h2>
+    <div class="row">
+        <div class="col"><img src="img/avto/kia.jpg" alt="" width="600" height="320" class="img-fluid"></div>
+        <div class="col"><img src="img/avto/granta.jpg" alt="" width="600" height="330" class="img-fluid"></div>
+    </div>
+    <p align="center" class="py-2"><strong>Условия которые мы предоставляем нашим водителям являются
+        УНИКАЛЬНЫМИ: </strong></p>
+    <div class="row py-2">
+        <div class="col">
+            <ul class="text-center">
+                <!--                <li>Мы предоставляем свои машины без учёта кредитной истории и с минимальным первоначальным взносом</li>-->
+                <li style="list-style-type: none;">• Мы предоставляем нашим водителям поддержку по тех обслуживанию на
+                    весь срок выката.
+                </li>
+                <li style="list-style-type: none;">• За запчасти платит арендатор, а работы оплачиваем мы (за
+                    исключением последних 2-ух месяцев)
+                </li>
+                <li style="list-style-type: none;">• Заключение соответствующего договора, в котором прописана гарантия
+                    получения Вами автомобиля.
+                </li>
+                <li style="list-style-type: none;">• Минимальная предоплата от 2т.р</li>
+                <!--                <li>Страховка за счёт компании</li>-->
+                <!--                <li>Автомобили подготовленные к длительной эксплуатации, при своевременном техническом обслуживании-->
+                <!--                    будут служить долгие годы.-->
+                <!--                </li>-->
+                <!--                <li style="list-style-type: none;">• Срок выката составляет от одного года</li>-->
+            </ul>
+        </div>
+    </div>
+
+    <h3 class="text-center pb-3">Перечень автомобилей под выкат :</h3>
+    <table class="text-center table table-hover table-bordered">
+        <thead>
+        <tr>
+            <th class="text-left" scope="col">Модель</th>
+            <th class="text-left" scope="col">Год выпуска</th>
+            <th class="text-left" scope="col">Срок выката</th>
+            <th class="text-left" scope="col">Аренда/сутки</th>
+        </tr>
+        </thead>
+        <tbody>
+<!--        <tr>-->
+<!--            <td class="text-left">KIA RIO</td>-->
+<!--            <td class="text-left">2017</td>-->
+<!--            <td class="text-left">1 год 10 мес.</td>-->
+<!--            <td class="text-left">1600 руб.</td>-->
+<!--        </tr>-->
+        <tr>
+            <td class="text-left">RENAULT LOGAN</td>
+            <td class="text-left">2017</td>
+            <td class="text-left">1 год 9 мес.</td>
+            <td class="text-left">1400 руб.</td>
+        </tr>
+        <tr>
+            <td class="text-left">LADA GRANTA</td>
+            <td class="text-left">2017</td>
+            <td class="text-left">1 год 6 мес.</td>
+            <td class="text-left">1100 руб.</td>
+        </tr>
+        <tr>
+            <td class="text-left">LADA GRANTA</td>
+            <td class="text-left">2015</td>
+            <td class="text-left">1 год 2 мес.</td>
+            <td class="text-left">1000 руб.</td>
+        </tr>
+        </tbody>
+    </table>
+    <!--    <div class="row justify-content-center pb-4">-->
+    <!--        <p align="center"><strong>СРОКИ ВЫКАТА:</strong><br>-->
+    <!--            2014 год выпуска - 3 года выката<br>-->
+    <!--            2015 год выпуска - 3,5 года выката<br>-->
+    <!--            2016 год выпуска - 4 года выката<br>-->
+    <!--            2017 год выпуска - 5 лет выката<br>-->
+    <!--            &lt;!&ndash;            То есть, вы просто работаете на автомобиле, и через определенный<br>&ndash;&gt;-->
+    <!--            &lt;!&ndash;            договором срок он становится вашим, как за выслугу лет&ndash;&gt;-->
+    <!--        </p>-->
+    <!--    </div>-->
+</section>
+<section class="hcol2 container-fluid" id="arta">
+    <div class="container">
+        <h2 align="center" class="py-3">АРЕНДА АВТОМОБИЛЯ ПОД ТАКСИ</h2>
+        <p align="center" class="pb-2">Компания «АВТОПАРК» рада Вам предложить новый комплекс услуг по аренде
+            автомобилей для работы в такси.</p>
+        <p align="center" class="pb-3">Все Машины имеют лицензии на перевозку и максимальный приоритет в основных
+            службах такси На всех автомобилях установлено ГБО </p>
+        <div class="row">
+            <div class="col"><img src="img/logo/ya.jpg" alt="" width="286" height="135" class="img-fluid"></div>
+            <div class="col"><img src="img/logo/get.jpg" alt="" width="194" height="110" class="img-fluid"></div>
+            <div class="col"><img src="img/logo/max.jpg" alt="" width="189" height="126" class="img-fluid"></div>
+            <div class="col"><img src="img/logo/lider.jpg" alt="" width="291" height="109" class="img-fluid"></div>
+        </div>
+        <div class="row py-3 justify-content-center">
+            <div class="col-md-4 obvodplo m-2">
+                <p align="center" class="p-2 tcw"><strong>На машинах установлено ГБО последнего поколения (экономия на
+                    топливе в среднем от 500 руб в смену)&nbsp;</strong></p>
+            </div>
+            <div class="col-md-4 obvodplo m-2">
+                <p align="center" class="p-2 tcw"><strong>Ремонт и резина за счет компании (своевременное и быстрое
+                    обслуживания автомобилей)</strong></p>
+            </div>
+            <div class="col-md-4 obvodplo m-2">
+                <div class="row align-items-center align-self-center h-100">
+                    <div class="col">
+                        <p align="center" class="p-2 tcw"><strong>Возможно официальное трудоустройство</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row text-center py-5">
+            <div class="col">
+                <button type="button" class="btn btn-warning btn-lg" data-toggle="modal" data-target="#modal_call_new">
+                    <strong>ЗАЯВКА НА АРЕНДУ АВТО</strong></button>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="hcol2 container-fluid">
+    <div class="row pb-3 justify-content-center">
+        <div class="col-md-3 py-2">
+            <div align="center"><i class="fa fa-exclamation-circle fa-3x obvodfa p-4"></i></div>
+            <p align="center"><strong>Свободный график</strong></p>
+            <p align="center">Вы сами решаете когда и сколько работать!</p>
+        </div>
+        <div class="col-md-3 py-2">
+            <div align="center"><i class="fa fa-coins fa-3x obvodfa p-4"></i></div>
+            <p align="center"><strong>Никаких планов</strong></p>
+            <p align="center">Мы не ставим дневных/суточных/недельных/месячных планов!</p>
+        </div>
+        <div class="col-md-3 py-2">
+            <div align="center"><i class="fa fa-3x obvodfa p-4 fa-thumbs-up"></i></div>
+            <p align="center"><strong>Поддержка 24/7</strong></p>
+            <p align="center">Круглосуточная диспетчерская и техническая поддержка!</p>
+        </div>
+        <div class="col-md-3 py-2">
+            <div align="center"><i class="far fa-3x obvodfa p-4 fa-edit"></i></div>
+            <p align="center"><strong>Лицензия такси</strong></p>
+            <p align="center">Предоставим и оформим лицензию!</p>
+        </div>
+        <div class="col-md-3 py-2">
+            <div align="center"><i class="fa fa-chart-pie fa-3x obvodfa p-4"></i></div>
+            <p align="center"><strong>Быстро подключим</strong></p>
+            <p align="center">Подключим Вас за 10 минут без визита в офис.</p>
+        </div>
+        <div class="col-md-3 py-2">
+            <div align="center"><i class="fa fa-ruble-sign fa-3x obvodfa otfa"></i></div>
+            <p align="center"><strong>Переводы по системе QIWI Wallet</strong></p>
+            <p align="center">Водитель самостоятельно и моментально
+                выводит собственные средства в любое удобное для него время.</p>
+        </div>
+    </div>
+</section>
+<section class="container" id="auto">
+    <h1 align="center" class="pt-3">НАШИ АВТОМОБИЛИ </h1>
+    <div class="row otsb otsu justify-content-center">
+        <div class="col-md-6">
+            <h2>KIA Rio</h2>
+            <div class="polosa3 mb-2"></div>
+            <ul class="tsauto">
+                <li>Год выпуска - 2017</li>
+                <li>Кузов - седан</li>
+                <li>Автоматическая коробка передач</li>
+                <li>Кондиционер, аудиосистема</li>
+                <li>Автомобили оборудованы ГБО (экономия минимум 500 руб. в смену)</li>
+                <li>Стоимость аренды: от 1600 руб</li>
+                <!--                <li>Срок выкупа: 1 год 6 месяцев</li>-->
+            </ul>
+        </div>
+        <div class="col-md-6"><img src="img/avto/kia.jpg" alt="" width="600" height="320" class="img-fluid"></div>
+    </div>
+    <div class="row otsb otsu justify-content-center">
+        <div class="col-md-6"><img src="img/avto/logan.png" alt="" width="571" height="332" class="img-fluid"></div>
+        <div class="col-md-6">
+            <h2>Renault Logan</h2>
+            <div class="polosa3 mb-2"></div>
+            <ul class="tsauto">
+                <li>Год выпуска - 2018 - 2019</li>
+                <li>Кузов - седан</li>
+                <li>АКПП/МКПП</li>
+                <li>Кондиционер, аудиосистема</li>
+                <li>автомобили оборудованы ГБО (экономия минимум 500 руб. в смену)</li>
+                <li>Стоимость аренды: от 1400 руб</li>
+                <!--                <li>Срок выкупа: 1 год 6 месяцев</li>-->
+            </ul>
+        </div>
+    </div>
+    <div class="row otsb otsu justify-content-center">
+        <div class="col-md-6">
+            <h2>LADA Granta</h2>
+            <div class="polosa3 mb-2"></div>
+            <ul class="tsauto">
+                <li>Год выпуска - 2015 - 2019</li>
+                <li>Кузов - седан</li>
+                <li>Механическая коробка передач</li>
+                <li>Усилитель руля, аудиосистема</li>
+                <li>Автомобили оборудованы ГБО (экономия минимум 500 руб. в смену)</li>
+                <li>Стоимость аренды: от 1000 руб</li>
+                <!--                <li>Срок выкупа: 1 год</li>-->
+            </ul>
+        </div>
+        <div class="col-md-6"><img src="img/avto/granta.jpg" alt="" width="600" height="330" class="img-fluid"></div>
+    </div>
+</section>
+<section class="hcol2 container-fluid" id="connectya">
+    <div class="container">
+        <h2 class="py-4" align="center">ПОДКЛЮЧЕНИЕ К «<span style="color: red"><strong>Я</strong></span>НДЕКС ТАКСИ»
+        </h2>
+        <p align="center">Официальный партнер <span style="color: red"><strong>Я</strong></span>ндекс. Такси, <strong>Компания
+            «Автопарк»</strong> объявляет набор водителей для работы в сервисе Яндекс такси с личным автомобилем или на
+            автомобиле компании </p>
+        <h4 align="center">Мы предлагаем:</h4>
+        <div class="row">
+            <div class="col">
+                <ul>
+                    <li>Самые низкие % комиссии по городу</li>
+                    <li>Бесплатное подключение и помощь в освоении приложения</li>
+                    <li>Круглосуточная тех. поддержка</li>
+                    <li>Весь заработок вы видите в режиме реального времени в личном кабинете приложения</li>
+                    <li>Честное распределение заказов автоматической системой</li>
+                    <!--                    <li>У нас вы можете оформить топливные карты сети АЗС наших партнеров на любые виды топлива, с-->
+                    <!--                        возможностью пополнения с баланса вашего приложения «Таксометр»-->
+                    <!--                    </li>-->
+                </ul>
+            </div>
+            <div class="col">
+                <ul>
+                    <li>Наличие ИП не ОБЯЗАТЕЛЬНО</li>
+                    <li>Свободный график работы, работайте когда есть свободное время</li>
+                    <li>Стабильные выплаты безналичных расчетов на карту любого банка</li>
+                    <li>Работа через современное приложение на базе Андроид версии 4.0</li>
+                    <li>Круглосуточный и моментально вывод средств.</li>
+                </ul>
+            </div>
+        </div>
+        <p align="center"><strong>Будем рады видеть вас в нашем офисе по адресу ул.Демьяна Бедного 6, офис 38
+            ежедневно </strong></p>
+        <p align="center" class="py-2"><strong>понедельник-пятница с 10:00 до 18:00, суббота-воскресенье с 12:00 до
+            14:00 </strong></p>
+        <div class="row text-center pb-5">
+            <div class="col">
+                <button type="button" class="p-xs-0 btn btn-warning btn-lg" data-toggle="modal" data-target="#modal_call_new">
+                    <strong>ЗАЯВКА НА ПОДКЛЮЧЕНИЕ</strong></button>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="contact" class="container-fluid">
+    <h1 class="py-3" align="center">Наш адрес</h1>
+    <p align="center" class="pb-3">г.Кемерово, ул.Демьяна Бедного 6, офис 38</p>
+    <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A9a80681de9db485724a1a18ec8ae7e22dc074b23387dd065ac1bc531cdcbfb03&amp;source=constructor"
+            width="100%" height="400" frameborder="0"></iframe>
+</section>
+<header class="hcol header container-fluid">
+    <div class="row align-items-center">
+        <div class="col-md-4 align-self-center">
+            <h1 align="center" class="tcw logosizetext">А<small><strong><small><strong>ВТОПАРК</strong></small></strong></small>
+            </h1>
+        </div>
+        <div class="col-md-5 text-md-right text-center">
+            <p class="tcw htps">8-(3842)65-01-99</p>
+            <!--        <p class="tcw htps">8-(3842)-761-222</p>-->
+            <p class="tcw"><strong>Демьяна Бедного, 6. Офис, 38 </strong></p>
+        </div>
+        <div class="py-2 text-md-left text-center col-md-3">
+            <button data-toggle="modal" data-target="#modal_call_new" type="button" class="btn btn-warning">ЗАКАЗАТЬ
+                ЗВОНОК
+            </button>
+        </div>
+    </div>
+</header>
+
+<!--модальные окна-->
+
+
+
+<div class="modal fade" id="modal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel" align="center">Заполните форму, и с вами свяжутся в
+                    ближайшее время</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body"></div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modal_call" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Заявка</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <h3 align="center">Заполните форму, и с вами свяжутся</h3>
+                            <hr>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="modal-body">
+                        <form action="/old/mail/Zayavka.php" method="post">
+                            <div class="form-group">
+                                <input hidden name="variant" type="text" value="Обратный звонок">
+                                <input class="form-control" name="name" type="text" placeholder="Ваше имя *" required>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" name="phone" type="text" placeholder="Ваш телефон *"
+                                       required>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="col-lg-12 text-center">
+                                <div id="success"></div>
+                                <button class="btn btn-xl" type="submit">Отправить</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <h1></h1>
+                <form action=""></form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modal_call_new" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Заявка</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <h3 align="center">Заполните форму, и с вами свяжутся</h3>
+                            <hr>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="modal-body">
+                        <script id="bx24_form_inline" data-skip-moving="true">
+                            (function (w, d, u, b) {
+                                w['Bitrix24FormObject'] = b;
+                                w[b] = w[b] || function () {
+                                    arguments[0].ref = u;
+                                    (w[b].forms = w[b].forms || []).push(arguments[0])
+                                };
+                                if (w[b]['forms']) return;
+                                var s = d.createElement('script');
+                                s.async = 1;
+                                s.src = u + '?' + (1 * new Date());
+                                var h = d.getElementsByTagName('script')[0];
+                                h.parentNode.insertBefore(s, h);
+                            })(window, document, 'https://avtopark.bitrix24.ru/bitrix/js/crm/form_loader.js', 'b24form');
+
+                            b24form({"id": "20", "lang": "ru", "sec": "f1g7o4", "type": "inline"});
+                        </script>
+                    </div>
+                </div>
+                <h1></h1>
+                <form action=""></form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modal_ya" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Заявка</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <h3 align="center">Заполните форму, и с вами свяжутся</h3>
+                            <hr>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="modal-body">
+                        <form action="/old/mail/Zayavka.php" method="post">
+                            <div class="form-group">
+                                <input hidden name="variant" type="text" value="Заявка на подключение к Яндекс Такси">
+                                <input class="form-control" name="name" type="text" placeholder="Ваше имя *" required>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" name="phone" type="text" placeholder="Ваш телефон *"
+                                       required>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" name="vu" type="text" placeholder="Серия и номер В/У *"
+                                       required>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" name="vuv" type="text" placeholder="Дата выдачи В/У *"
+                                       required>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" name="ma" type="text" placeholder="Марка автомобиля *"
+                                       required>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" name="ca" type="text" placeholder="Цвет автомобиля *"
+                                       required>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" name="va" type="text" placeholder="Год выпуска Автомобиля *"
+                                       required>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" name="na" type="text" placeholder="Гос.Номер *" required>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="col-lg-12 text-center">
+                                <div id="success"></div>
+                                <button class="btn btn-xl" type="submit">Отправить</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <h1></h1>
+                <form action=""></form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--<script src="//yandex.st/jquery/1.9.1/jquery.min.js"></script>-->
+<script src="js/jquery-3.3.1.js"></script>
+<script src="js/popper.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/bootstrap.bundle.js"></script>
+<script src="js/scroll.js"></script>
+<script data-skip-moving="true">
+    (function (w, d, u) {
+        var s = d.createElement('script');
+        s.async = 1;
+        s.src = u + '?' + (Date.now() / 60000 | 0);
+        var h = d.getElementsByTagName('script')[0];
+        h.parentNode.insertBefore(s, h);
+    })(window, document, 'https://cdn.bitrix24.ru/b7087087/crm/site_button/loader_2_jkpisp.js');
+</script>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function (m, e, t, r, i, k, a) {
+        m[i] = m[i] || function () {
+            (m[i].a = m[i].a || []).push(arguments)
+        };
+        m[i].l = 1 * new Date();
+        k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+    })
+    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+    ym(65222263, "init", {
+        clickmap: true,
+        trackLinks: true,
+        accurateTrackBounce: true,
+        webvisor: true
+    });
+</script>
+<noscript>
+    <div><img src="https://mc.yandex.ru/watch/65222263" style="position:absolute; left:-9999px;" alt=""/></div>
+</noscript>
+<!-- /Yandex.Metrika counter -->
+
+<script>(function ($) {
+    $(function () {
+        // Проверим, есть ли запись в куках о посещении посетителя
+        // Если запись есть - ничего не делаем
+        if (!$.cookie('was')) {
+            // Покажем всплывающее окно
+            $('#pop1').popover('show')
+        }
+        // Запомним в куках, что посетитель к нам уже заходил
+        $.cookie('was', true, {
+            expires: 2,
+            path: '/'
+        });
+    })
+})(jQuery)
+</script>
+
+<script>
+    function togpop() {
+        $('#pop1').popover('hide')
+    }
+</script>
+<!--<script>
+  $(window).on('load', function () {
+    $('#load').css("display", "block"); // показываем блок с контентом 
+    $('#lader').delay(350).fadeOut('slow'); // и скрываем сам блок прелоудера.
+});
+</script>-->
+<script src="//yandex.st/jquery/cookie/1.0/jquery.cookie.min.js"></script>
+</body>
+</html>
